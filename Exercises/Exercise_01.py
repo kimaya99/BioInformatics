@@ -1,8 +1,3 @@
-# Exercise 01
-#Kimaya Desai
-#820884799
-# 25th January 2018
-
 def hello():
     """
     Prints "Hello World"
@@ -42,12 +37,14 @@ def complement(dna):
     Returns the complement strand of DNA to the input.  C <--> G,  A <--> T
     :param dna: String containing only C, T, A, and G
     :return: String containing only C, T, A, and G
-
     """
     dict = {'C': 'G', 'A': 'T', 'G': 'C','T':'A'}
-    if dict.has_key(dna):
-        complement = dict.get(dna)
-    return complement
+    dnasize = len(dna)
+    complementtemp = ""
+    for i in range(0,dnasize):
+        complementtemp = complementtemp + dict.get(dna[i])
+        dnasize -=1
+    return complementtemp
 
 
 hello()
@@ -60,13 +57,7 @@ print(percent_decimal(0.099))
 print(exponent(2,3))
 print(exponent(9,2))
 
-print(complement('C'))
-print(complement('T'))
-print(complement('A'))
-print(complement('G'))
-
-
-
-
-
-
+print(complement('CTAG'))
+print(complement('TCAG'))
+print(complement('ATGA'))
+print(complement('GATC'))
