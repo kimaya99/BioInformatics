@@ -47,7 +47,6 @@ def complement(dna):
     complementtemp = ""
     for i in range(0,dnasize):
         complementtemp = complementtemp + dict.get(dna[i])
-        dnasize -=1
     return complementtemp
 
 
