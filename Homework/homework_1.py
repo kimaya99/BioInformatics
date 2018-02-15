@@ -300,13 +300,13 @@ def fastq_to_fasta(file_name, new_name=None):
                         header = x[0].replace('\r','')                       
                         sequence = x[1]
                         newseq = sequence.split('+')[0]
-                        xseq = newseq.split('\n', 1) 
+                 
                                      
                         with open(file_name[0] +'.fasta','a') as outfile:
                             outfile.write('>')
                             outfile.write(header)
                             outfile.write("\n")
-                            outfile.write(xseq[0])
+                            outfile.write(newseq)
                     except:
                         print('error')        
 
