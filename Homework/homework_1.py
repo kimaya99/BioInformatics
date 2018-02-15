@@ -291,6 +291,7 @@ def fastq_to_fasta(file_name, new_name=None):
 
     with open (file_name, 'r') as infile:
         text = infile.read()
+        file_name = file_name.split('.')
         seqs = text.split('@')
         for seq in seqs:
             if seq <> '':
@@ -301,7 +302,7 @@ def fastq_to_fasta(file_name, new_name=None):
                         newseq = sequence.split('+')[0]
                         xseq = newseq.split('\n', 1) 
                                      
-                        with open('abc.fasta','a') as outfile:
+                        with open(file_name[0] +'.fasta','a') as outfile:
                             outfile.write('>')
                             outfile.write(header)
                             outfile.write("\n")
