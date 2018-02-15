@@ -377,9 +377,8 @@ def translate(rna):
  
     i = 0
     protein = ""
-    nof1 = len(rna)/3
-
-    while (nof1 != 0):
+    rnalength = len(rna)
+    while (rnalength != 0):
         x = rna[i:i+3]
         if x is None:
             x=  ''
@@ -389,12 +388,11 @@ def translate(rna):
         if m <> '*':
             protein += m
         i+=3
-        nof1 -= 1
-
+        rnalength -= 3
+        
     return protein
 
-print("Question17 ---------- ")
-print(translate('UUUGGUGGUUAAUCUAGA'))
+
 
 # print("Question17 ---------- ")
 # print(translate('UUUGGUGGUUAA'))
