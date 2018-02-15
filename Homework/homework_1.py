@@ -423,6 +423,8 @@ def reading_frames(dna):
 
     for m in range(0, len(dna)):
         complementdna += dict.get(dna[m])
+    
+    complementdna = complementdna[::-1]
 
     while (count != nof1):
         str1 += dna[i:i+3]
