@@ -258,6 +258,7 @@ def fasta_dict(file_name):
     :return: a dictionary
     """
 
+    
     my_dictionary ={}
     my_list=['A','C','G','T']
     output_seq = ""
@@ -266,28 +267,15 @@ def fasta_dict(file_name):
         text = infile.read()
         seqs = text.split('>')
         for seq in seqs:
-                if seq <> '':
-                    try:
-                        x = seq.split('\n', 1)
-                        header = x[0].replace('\r','')                       
-                        sequence = x[1].replace('\r', '')
-                        sequence = sequence.replace('\n', '')
-                           
-                        if header not in my_dictionary:                           
-                            if sequence:                               
-                                for char in sequence:
-                                    if char in my_list:
-                                        output_seq = output_seq + char
-                                if sequence == output_seq:
-                                    my_dictionary[header] = sequence
-                                    output_seq = ""         
-                                    
-                    except:
-                        print('error')        
-             
+                if seq <> '':              
+                    x = seq.split('\n', 1)
+                    header = x[0].replace('\r','')                       
+                    sequence = x[1].replace('\r', '')
+                    sequence = sequence.replace('\n', '')
+                    my_dictionary[header] = sequence
+                            
     return my_dictionary
     
-
 # print("Question13 ---------- ")
 # print(fasta_dict("proper_fasta.fasta"))
 
