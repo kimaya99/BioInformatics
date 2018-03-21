@@ -73,7 +73,7 @@ def atp_variable_region(string):
     :param string: the protein sequence to be searched
     :return: a strings
     """
-    ans = re.search("[A|G](....)[G][K][S|T]", string).group(1)
+    ans = re.search("[A|G](.*?)[G][K][S|T]", string).group(1)
     return ans
 
 print(atp_variable_region(test_protein))
