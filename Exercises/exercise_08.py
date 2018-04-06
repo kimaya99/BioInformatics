@@ -1,6 +1,7 @@
 """
 Exercise 8
-
+Kimaya Desai
+820884799
 
 1) Write a definition called 'compute' which takes in only **kwargs and meets the following specifications:
     - ensure that the key word 'input' is always be a list of integers before proceeding
@@ -36,14 +37,15 @@ def compute(**kwargs):
             if kwargs['return_float']==True:
                 return float(sum(input)) / max(len(input), 1)       
             if kwargs['return_float']==False:
-                return int(sum(input)) / max(len(input),1)
+                return int((sum(input)) / max(len(input),1))
    else:
-        print("Not a list")
+        return "Not a List"
    
 
    return 
 
 print(compute(input="[1,2,3]",action='sum',return_float=True))
+print(compute(input=[1,2,3],action='sum',return_float=True))
 print(compute(input=[1,2,3],action='sum',return_float=False))
 print(compute(input=[1,2,3],action='mean',return_float=True))
 print(compute(input=[1,2,3],action='mean',return_float=False))
@@ -51,10 +53,10 @@ print(compute(input=[1,2,3],action='mean',return_float=False))
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='')
-    parser.add_argument('-m', '--multiply', help='', type=int)
-    parser.add_argument('-s', '--sum', help='', action='store_true')
-    parser.add_argument('remainder', help='', nargs=argparse.REMAINDER)
+    parser = argparse.ArgumentParser(description='Process integers')
+    parser.add_argument('-m', '--multiply', help='Mention -m for multiplication ', type=int)
+    parser.add_argument('-s', '--sum', help='Mention -s for addition', action='store_true')
+    parser.add_argument('remainder', help='Provide integers to perform operation on', nargs=argparse.REMAINDER)
     
 
     try:
@@ -63,9 +65,9 @@ if __name__ == '__main__':
         if args.sum:
             print(sum(int(x) for x in args.remainder))
         if args.multiply:
-            results = [int(i) for i in args.remainder]
             results = [int(i)*args.multiply for i in args.remainder]
-            print(results)
+            for row in results:
+                print(row)
       
     except:
         parser.print_help()
