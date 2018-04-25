@@ -1,6 +1,5 @@
 """
 Exercise 10 - Generators
-Kimaya Desai
 
 For this exercise you will be writing a class for several different generator functions.
 
@@ -32,6 +31,8 @@ For this exercise you will be writing a class for several different generator fu
 """
 
 import math
+
+
 class Gens:
 
     count = 0;
@@ -85,7 +86,7 @@ class Gens:
         while True:
             for item in listing:
                 yield item
-                
+
 def main():
         q = Gens(0)
         x = Gens(1)
@@ -106,23 +107,17 @@ def main():
             else:
                 print j
 
-        for x in a.exponential(2):
-            if x > 50:
-                break;
-            else:
-                print x
-
-        for i in m.triple_half():
-            if i > 50:
-                break;
-            else:
-                print i
-
         for k in b.linear(2):
             if k > 10:
                 break;
             else:
                 print k
+
+        for x in a.exponential(2):
+            if x > 50:
+                break;
+            else:
+                print x
 
         counter = 0
         abc = q.sequence([2, 3, 4])
@@ -130,7 +125,11 @@ def main():
             print(next(abc))
             counter = counter + 1
 
+        for i in m.triple_half():
+            if i > 50:
+                break;
+            else:
+                print i
 
 if __name__ == '__main__':
     main()
-
