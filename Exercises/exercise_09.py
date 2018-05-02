@@ -35,7 +35,9 @@ import time
 import math
 
 def timing_function(some_function):
+	
     def wrapper():
+	
         t1 = time.time()
         some_function()
         t2 = time.time()
