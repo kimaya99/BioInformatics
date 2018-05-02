@@ -1,8 +1,7 @@
 """
 Exercise 9
-KIMAYA DESAI
+Kimaya Desai
 820884799
-
 1) Write a decorator function that prints the:
      - real world time taken to run the function,
      - process time used to run the function, and
@@ -41,7 +40,8 @@ def timing_function(some_function):
         some_function()
         t2 = time.time()
         sizeOfReturnValue = sys.getsizeof(some_function())
-        return "Time it took to run the function: " + str((t2 - t1)) + "\n" + "Size of the return value: "+str(sizeOfReturnValue)+ "\n"+"------------"
+        process_time = time.process_time() 
+        return "Time it took to run the function: " + str((t2 - t1)) + "\n" + "Size of the return value: "+str(sizeOfReturnValue) + "\n" +"Process Time "+str(process_time)+ "\n"+"------------"
 
     return wrapper
 
