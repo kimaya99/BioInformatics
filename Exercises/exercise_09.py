@@ -43,7 +43,7 @@ def timing_function(some_function):
         t2 = time.time()
         sizeOfReturnValue = sys.getsizeof(some_function())
         process_time = time.process_time() 
-        return "Time it took to run the function: " + str((t2 - t1)) + "\n" + "Size of the return value: "+str(sizeOfReturnValue) + "\n" +"Process Time "+str(process_time)+ "\n"+"------------"
+        return "Time it took to run the function: " + str((t2 - t1)) + "\n" + "Size of the return value: "+str(sizeOfReturnValue) + "\n" +"Process Time: "+str(process_time)+ "\n"+"------------"
 
     return wrapper
 
