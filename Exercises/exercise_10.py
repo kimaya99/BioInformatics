@@ -98,25 +98,25 @@ def main():
             if i > 100:
                 break;
             else:
-               print i
+               print (i)
 
         for j in y.fib():
             if j > 100:
                 break;
             else:
-                print j
+                print (j)
 
         for k in b.linear(2):
             if k > 10:
                 break;
             else:
-                print k
+                print (k)
 
         for x in a.exponential(2):
             if x > 50:
                 break;
             else:
-                print x
+                print (x)
 
         counter = 0
         abc = q.sequence([2, 3, 4])
@@ -128,7 +128,7 @@ def main():
             if i > 50:
                 break;
             else:
-                print i
+                print (i)
 
 if __name__ == '__main__':
     main()
