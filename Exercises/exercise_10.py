@@ -55,8 +55,7 @@ class Gens:
         print(self)
         while True:
             yield self.a
-            self.a = self.b
-            self.b = self.a + self.b
+            self.a, self.b = self.b, self.a + self.b
 
     def linear(self, n):
         print(self)
